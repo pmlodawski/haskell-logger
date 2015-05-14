@@ -172,7 +172,8 @@ As the output we get:
 ```
 
 The output may of course vary, based on the way threads will be sheduled, because we use `print` functions here. Anyway you can notice, that the prints were executed at the same time as all the logging.
-It is important to use ```Thread.fork```, which is just a simple wrapper around `forkIO`.
+It is important to use ```Thread.fork```, which is just a simple wrapper around `forkIO`. 
+Remember also, that routine called as an argument of `runThreadedLogger` will be run in separate thread and its logs will be collected in main thread.
 
 #### Exception handling
 
